@@ -19,7 +19,7 @@ describe 'Api Users metodo GET' do
             expect(@userPost['meta']['pagination']['limit']).not_to be nil
         end
 
-        it 'Retorna data' do
+        it 'Valida data' do
             binding.pry
             expect(@userPost['data'][0]['id']).not_to be nil
             expect(@userPost['data'][0]['user_id']).not_to be nil

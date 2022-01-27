@@ -29,7 +29,7 @@ describe 'Api Create Users metodo Post' do
             expect(@users['meta']['pagination']['limit']).not_to be nil
         end
 
-        it 'Retorna data' do
+        it 'Valida data' do
             expect(@users['data'][0]['id']).not_to be nil
             expect(@users['data'][0]['user_id']).not_to be nil
             expect(@users['data'][0]['title']).not_to be nil

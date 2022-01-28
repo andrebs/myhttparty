@@ -3,7 +3,8 @@ describe 'Api Users metodo GET' do
     context 'Consulta usuario' do
         before(:context) do
             @users = User.get('/public-api/users?page=1')
-            @id = @users['data'][3]['id'].to_s
+            #@id = @users['data'][6]['id'].to_s
+            @id = '3820'
             @userPost = User.get('/public-api/users/'+ @id +'/posts')
         end
     
@@ -20,7 +21,6 @@ describe 'Api Users metodo GET' do
         end
 
         it 'Valida data' do
-            binding.pry
             expect(@userPost['data'][0]['id']).not_to be nil
             expect(@userPost['data'][0]['user_id']).not_to be nil
             expect(@userPost['data'][0]['title']).not_to be nil

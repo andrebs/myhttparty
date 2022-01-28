@@ -6,6 +6,11 @@ describe 'Api Create Users metodo Post' do
             email = Faker::Internet.email
             name = Faker::Name.name 
 
+            @headers = {
+                'Authorization'=> 'Bearer 9fee0fe10edcd69d867e5044f8e9ead4e4f0c9061eda35697db5ab531666f497',
+                'Content-Type'=> 'application/json'
+            }
+
             @body = {
                 'name': name,
                 'gender': 'male',
@@ -13,8 +18,10 @@ describe 'Api Create Users metodo Post' do
                 'status': 'active'
             }.to_json
 
-            @authorization = {'Authorization':'Bearer 9fee0fe10edcd69d867e5044f8e9ead4e4f0c9061eda35697db5ab531666f497'}
-            @users = User.post('/public/v1/users', :headers => @authorization, :body => @body)
+            #@authorization = {'Authorization': 'Bearer 9fee0fe10edcd69d867e5044f8e9ead4e4f0c9061eda35697db5ab531666f497'}
+
+            binding.pry
+            @users = User.post('/public/v1/users', :headers => @headers, :body => @body)
         end
     
         it 'Retorna status code 201' do

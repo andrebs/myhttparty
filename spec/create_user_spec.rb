@@ -18,7 +18,7 @@ describe 'Api Create Users metodo Post' do
                 'status': 'active'
             }.to_json
 
-            #@authorization = {'Authorization': 'Bearer 9fee0fe10edcd69d867e5044f8e9ead4e4f0c9061eda35697db5ab531666f497'}
+            #@authdorization = {'Authorization': 'Bearer 9fee0fe10edcd69d867e5044f8e9ead4e4f0c9061eda35697db5ab531666f497'}
 
             @users = User.post('/public/v1/users', :headers => @headers, :body => @body)
         end
